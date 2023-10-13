@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system, //themeMode.system is used to set the theme according to the system
       //home: HomeScreen(),
-      home: SignIn(),
+      //home: SignIn(),
     );
   }
 }

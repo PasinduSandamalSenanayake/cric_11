@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1062127578849",
-    "project_id": "cric11-442ef",
-    "storage_bucket": "cric11-442ef.appspot.com"
+    "project_number": "22997878676",
+    "project_id": "cric11new-92409",
+    "storage_bucket": "cric11new-92409.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1062127578849:android:801f2556c30b642bfa91a0",
+        "mobilesdk_app_id": "1:22997878676:android:7d00e535b34f880896f181",
         "android_client_info": {
           "package_name": "com.seesea.cric_11"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC-9F7R4knVblG83Ze36OPC1idNaiST78s"
+          "current_key": "AIzaSyAUPhsYnB33PFCKis0Adv1IS3jYf0OeDYw"
         }
       ],
       "services": {

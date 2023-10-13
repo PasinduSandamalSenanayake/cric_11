@@ -4,13 +4,45 @@ import 'package:flutter/material.dart';
 import '../../const/color.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+
+  final VoidCallback show;
+  const SignUp(this.show,{super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
+
+  FocusNode _focusNodeEmail = FocusNode();
+  FocusNode _focusNodePassword = FocusNode();
+  FocusNode _focusNodeConfirmPassword = FocusNode();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final confirmPassword = TextEditingController();
+
+  @override
+  void initState(){
+    super.initState();
+    _focusNodeEmail.addListener(() {
+      setState(() {
+
+      });
+    });
+    super.initState();
+    _focusNodePassword.addListener(() {
+      setState(() {
+
+      });
+    });
+    super.initState();
+    _focusNodeConfirmPassword.addListener(() {
+      setState(() {
+
+      });
+    });
+  }
+
   bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
@@ -32,9 +64,9 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             children: [
               logo(),
-              textfield_email(),
-              textfield_password(),
-              textfield_confirm_password(),
+              textfield_email(email, _focusNodeEmail, "Email", Icons.email),
+              textfield_password(password, _focusNodePassword, "Password", Icons.lock),
+              textfield_confirm_password(confirmPassword, _focusNodeConfirmPassword, "Confirm Password", Icons.lock),
               textfield_login(),
               signUp_button(),
             ],
@@ -61,7 +93,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Widget textfield_email(){
+  Widget textfield_email(TextEditingController _controller, FocusNode _focusNode, String _hintText, IconData _icon){
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -70,6 +102,8 @@ class _SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -80,7 +114,7 @@ class _SignUpState extends State<SignUp> {
               color: custom_blue,
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            hintText: "Email",
+            hintText: _hintText,
             hintStyle: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -98,7 +132,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Widget textfield_password(){
+  Widget textfield_password(TextEditingController _controller, FocusNode _focusNode, String _hintText, IconData _icon){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
       child: Container(
@@ -107,6 +141,8 @@ class _SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -117,7 +153,7 @@ class _SignUpState extends State<SignUp> {
               color: custom_blue,
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            hintText: "Password",
+            hintText: _hintText,
             hintStyle: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -147,7 +183,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Widget textfield_confirm_password(){
+  Widget textfield_confirm_password(TextEditingController _controller, FocusNode _focusNode, String _hintText, IconData _icon){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
       child: Container(
@@ -156,6 +192,8 @@ class _SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -166,7 +204,7 @@ class _SignUpState extends State<SignUp> {
               color: custom_blue,
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            hintText: "Confirm Password",
+            hintText: _hintText,
             hintStyle: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -206,17 +244,13 @@ class _SignUpState extends State<SignUp> {
             Text("Do have an account? ",
               style : Theme.of(context).textTheme.subtitle1,
             ),
-            TextButton(
-              onPressed: (){
-                 Navigator.push(
-                   context as BuildContext,
-                   MaterialPageRoute(builder: (context) => SignIn())
-                 );
-              },
-              child: Text("Login",
+            GestureDetector(
+              onTap: widget.show,
+              child: Text(
+                " Login",
                 style: TextStyle(
                   color: custom_blue,
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
               ),
             ),
@@ -234,7 +268,9 @@ class _SignUpState extends State<SignUp> {
         width: double.infinity,
         height: 50,
         child: ElevatedButton(
-          onPressed: (){},
+          onPressed: (){
+
+          },
           child: Text("SIGN UP",
             style: TextStyle(
               color: Colors.black,

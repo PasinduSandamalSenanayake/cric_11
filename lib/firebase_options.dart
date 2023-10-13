@@ -44,37 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCGKbnXNHgGBVV2XgQYo1uqMhmpOMaQbv4',
-    appId: '1:1062127578849:web:89ddae1bcd2c76e4fa91a0',
-    messagingSenderId: '1062127578849',
-    projectId: 'cric11-442ef',
-    authDomain: 'cric11-442ef.firebaseapp.com',
-    storageBucket: 'cric11-442ef.appspot.com',
+    apiKey: 'AIzaSyCrm6121_m_SQzS1_QMfOC07juOM6x0-VQ',
+    appId: '1:22997878676:web:51a0f99563e7596396f181',
+    messagingSenderId: '22997878676',
+    projectId: 'cric11new-92409',
+    authDomain: 'cric11new-92409.firebaseapp.com',
+    storageBucket: 'cric11new-92409.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC-9F7R4knVblG83Ze36OPC1idNaiST78s',
-    appId: '1:1062127578849:android:801f2556c30b642bfa91a0',
-    messagingSenderId: '1062127578849',
-    projectId: 'cric11-442ef',
-    storageBucket: 'cric11-442ef.appspot.com',
+    apiKey: 'AIzaSyAUPhsYnB33PFCKis0Adv1IS3jYf0OeDYw',
+    appId: '1:22997878676:android:7d00e535b34f880896f181',
+    messagingSenderId: '22997878676',
+    projectId: 'cric11new-92409',
+    storageBucket: 'cric11new-92409.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCH-2pTRegGVqnJ6jPkQM55a5lottdQjoE',
-    appId: '1:1062127578849:ios:91c54e54252d904ffa91a0',
-    messagingSenderId: '1062127578849',
-    projectId: 'cric11-442ef',
-    storageBucket: 'cric11-442ef.appspot.com',
+    apiKey: 'AIzaSyB922FD0o_mLZ0JqUHHv1mJ_sYgNkGBuOA',
+    appId: '1:22997878676:ios:bfcc9f2c108181fa96f181',
+    messagingSenderId: '22997878676',
+    projectId: 'cric11new-92409',
+    storageBucket: 'cric11new-92409.appspot.com',
     iosBundleId: 'com.seesea.cric11',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCH-2pTRegGVqnJ6jPkQM55a5lottdQjoE',
-    appId: '1:1062127578849:ios:43a6c8b948529b87fa91a0',
-    messagingSenderId: '1062127578849',
-    projectId: 'cric11-442ef',
-    storageBucket: 'cric11-442ef.appspot.com',
+    apiKey: 'AIzaSyB922FD0o_mLZ0JqUHHv1mJ_sYgNkGBuOA',
+    appId: '1:22997878676:ios:9f9380ae9876293096f181',
+    messagingSenderId: '22997878676',
+    projectId: 'cric11new-92409',
+    storageBucket: 'cric11new-92409.appspot.com',
     iosBundleId: 'com.seesea.cric11.RunnerTests',
   );
 }

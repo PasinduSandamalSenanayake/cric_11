@@ -4,13 +4,36 @@ import 'package:flutter/material.dart';
 import '../../const/color.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+
+  final VoidCallback show;
+  const SignIn(this.show,{super.key});
 
   @override
   State<SignIn> createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
+
+  FocusNode _focusNodeEmail = FocusNode();
+  FocusNode _focusNodePassword = FocusNode();
+  final email = TextEditingController();
+  final password = TextEditingController();
+
+  @override
+  void initState(){
+    super.initState();
+    _focusNodeEmail.addListener(() {
+      setState(() {
+
+      });
+    });
+    super.initState();
+    _focusNodePassword.addListener(() {
+      setState(() {
+
+      });
+    });
+  }
 
   bool _obscureText = true;
   @override
@@ -33,8 +56,8 @@ class _SignInState extends State<SignIn> {
           child: Column(
             children: [
               logo(),
-              textfield_email(),
-              textfield_password(),
+              textfield_email(email, _focusNodeEmail, "Email", Icons.email),
+              textfield_password(password, _focusNodePassword, "Password", Icons.lock),
               textfield_register(),
               signIn_button(),
             ],
@@ -61,7 +84,7 @@ class _SignInState extends State<SignIn> {
     );
   }
 
-  Widget textfield_email(){
+  Widget textfield_email(TextEditingController _controller, FocusNode _focusNode, String _hintText, IconData _icon){
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
@@ -70,6 +93,8 @@ class _SignInState extends State<SignIn> {
           borderRadius: BorderRadius.circular(10),
           ),
         child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -80,7 +105,7 @@ class _SignInState extends State<SignIn> {
               color: custom_blue,
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            hintText: "Email",
+            hintText: _hintText,
             hintStyle: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -98,7 +123,7 @@ class _SignInState extends State<SignIn> {
       );
   }
 
-  Widget textfield_password(){
+  Widget textfield_password(TextEditingController _controller, FocusNode _focusNode, String _hintText, IconData _icon){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 5),
       child: Container(
@@ -107,6 +132,8 @@ class _SignInState extends State<SignIn> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: TextField(
+          controller: _controller,
+          focusNode: _focusNode,
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -117,7 +144,7 @@ class _SignInState extends State<SignIn> {
               color: custom_blue,
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            hintText: "Password",
+            hintText: _hintText,
             hintStyle: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -157,17 +184,13 @@ class _SignInState extends State<SignIn> {
             Text("Don't have an account? ",
               style : Theme.of(context).textTheme.subtitle1,
             ),
-            TextButton(
-              onPressed: (){
-                Navigator.push(
-                  context as BuildContext,
-                  MaterialPageRoute(builder: (context) => SignUp())
-                );
-              },
-              child: Text("Register",
+            GestureDetector(
+              onTap: widget.show,
+              child: Text(
+                " Register",
                 style: TextStyle(
                   color: custom_blue,
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
               ),
             ),
@@ -185,7 +208,9 @@ class _SignInState extends State<SignIn> {
         width: double.infinity,
         height: 50,
         child: ElevatedButton(
-          onPressed: (){},
+          onPressed: (){
+
+          },
           child: Text("SIGN IN",
             style: TextStyle(
               color: Colors.black,
