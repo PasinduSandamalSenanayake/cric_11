@@ -1,3 +1,4 @@
+import 'package:cric_11/src/auth/main_page.dart';
 import 'package:cric_11/src/screen/home_screen.dart';
 import 'package:cric_11/src/screen/login/signin.dart';
 import 'package:cric_11/src/theme/theme.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system, //themeMode.system is used to set the theme according to the system
       //home: HomeScreen(),
       //home: SignIn(),
+      home: MainPage(),
     );
   }
 }

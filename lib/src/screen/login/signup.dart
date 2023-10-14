@@ -1,3 +1,4 @@
+import 'package:cric_11/src/data/auth_data.dart';
 import 'package:cric_11/src/screen/login/signin.dart';
 import 'package:flutter/material.dart';
 
@@ -269,7 +270,7 @@ class _SignUpState extends State<SignUp> {
         height: 50,
         child: ElevatedButton(
           onPressed: (){
-
+            AuthenticationRemote().signUp(email.text, password.text, confirmPassword.text);
           },
           child: Text("SIGN UP",
             style: TextStyle(
