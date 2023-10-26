@@ -33,6 +33,18 @@ flutter:
   assets:
     - images/logo/cric11.png
     - images/logo/cric11_white.png
+    - images/flags/1.png
+    - images/flags/2.png
+    - images/flags/3.png
+    - images/flags/4.png
+    - images/flags/5.png
+    - images/flags/6.png
+    - images/flags/7.png
+    - images/flags/8.png
+    - images/flags/9.png
+    - images/flags/10.png
+    - images/flags/11.png
+    - images/flags/12.png
 
   
   
